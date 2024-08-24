@@ -10,7 +10,7 @@ get_mode <- function(v) {
 
 calculate_statistics <- function(score_column) {
 
-  size_muestra <- format(nrow(muestra_grupo_a), nsmall = 0)
+  size_muestra <- format(nrow(muestra_grupo_c), nsmall = 0)
   average <- round(mean(score_column, na.rm = TRUE), 2)
   variance <- round(var(score_column, na.rm = TRUE), 2)
   range_values <- range(score_column, na.rm = TRUE)
@@ -82,14 +82,14 @@ make_box_plot <- function(data, score_column, fill_color = "blue",
 data <- read.csv("StudentsPerformance.csv")
 head(data)
 
-muestra_grupo_a <- data %>%
+muestra_grupo_c <- data %>%
   select(race_ethnicity, math_score, reading_score, writing_score) %>%
-  filter(race_ethnicity == "group A")
+  filter(race_ethnicity == "group C")
 
 
-math_stats <- calculate_statistics(muestra_grupo_a$math_score)
-reading_stats <- calculate_statistics(muestra_grupo_a$reading_score)
-writing_stats <- calculate_statistics(muestra_grupo_a$writing_score)
+math_stats <- calculate_statistics(muestra_grupo_c$math_score)
+reading_stats <- calculate_statistics(muestra_grupo_c$reading_score)
+writing_stats <- calculate_statistics(muestra_grupo_c$writing_score)
 
 column_names <- c("Tamaño de Muestra", "Media", "Mediana","Moda","Rango",  "Varianza",  "Desviación Estándar")
 
@@ -98,77 +98,79 @@ writing_table <- make_table(column_names, writing_stats)%>% change_table_names()
 reading_table <- make_table(column_names, reading_stats)%>% change_table_names()
 
 
-make_table_plot(math_table,"objective3/descriptive_analysis/group_a/images/math_table_plot.png")
-make_table_plot(writing_table,"objective3/descriptive_analysis/group_a/images/writing_table_plot.png")
-make_table_plot(reading_table,"objective3/descriptive_analysis/group_a/images/reading_table_plot.png")
+
+make_table_plot(math_table,"objective3/descriptive_analysis/group_c/images/math_table_plot.png")
+make_table_plot(writing_table,"objective3/descriptive_analysis/group_c/images/writing_table_plot.png")
+make_table_plot(reading_table,"objective3/descriptive_analysis/group_c/images/reading_table_plot.png")
+
 
 
 make_histogram_plot(
-  data = muestra_grupo_a,
+  data = muestra_grupo_c,
   score_column = "math_score",
   binwidth = 5,
   fill_color = "blue",
   border_color = "black",
   title = "Histogram of Math Score",
   x_label = "Math Score",
-  file_path = "objective3/descriptive_analysis/group_a/images/math_hist_plot.png"
+  file_path = "objective3/descriptive_analysis/group_c/images/math_hist_plot.png"
 )
 
 make_histogram_plot(
-  data = muestra_grupo_a,
+  data = muestra_grupo_c,
   score_column = "writing_score",
   binwidth = 5,
   fill_color = "blue",
   border_color = "black",
   title = "Histogram of Writing Score",
   x_label = "Writing Score",
-  file_path = "objective3/descriptive_analysis/group_a/images/writing_hist_plot.png"
+  file_path = "objective3/descriptive_analysis/group_c/images/writing_hist_plot.png"
 )
 
 make_histogram_plot(
-  data = muestra_grupo_a,
+  data = muestra_grupo_c,
   score_column = "reading_score",
   binwidth = 5,
   fill_color = "blue",
   border_color = "black",
   title = "Histogram of Reading Score",
   x_label = "Reading Score",
-  file_path = "objective3/descriptive_analysis/group_a/images/reading_hist_plot.png"
+  file_path = "objective3/descriptive_analysis/group_c/images/reading_hist_plot.png"
 )
 
 
 make_box_plot(
-  data = muestra_grupo_a,
+  data = muestra_grupo_c,
   score_column = "math_score",
   fill_color = "blue",
   border_color = "black",
   title = "Boxplot of Math Scores",
   y_label = "Math Score",
-  file_path = "objective3/descriptive_analysis/group_a/images/math_box_plot.png",
+  file_path = "objective3/descriptive_analysis/group_c/images/math_box_plot.png",
   outlier_color = "red",
   width = 4,
   height = 6  
 )
 make_box_plot(
-  data = muestra_grupo_a,
+  data = muestra_grupo_c,
   score_column = "writing_score",
   fill_color = "blue",
   border_color = "black",
   title = "Boxplot of Writing Scores",
   y_label = "Writing Score",
-  file_path = "objective3/descriptive_analysis/group_a/images/writing_box_plot.png",
+  file_path = "objective3/descriptive_analysis/group_c/images/writing_box_plot.png",
   outlier_color = "red",
   width = 4,
   height = 6  
 )
 make_box_plot(
-  data = muestra_grupo_a,
+  data = muestra_grupo_c,
   score_column = "reading_score",
   fill_color = "blue",
   border_color = "black",
   title = "Boxplot of Reading Scores",
   y_label = "Reading Score",
-  file_path = "objective3/descriptive_analysis/group_a/images/reading_box_plot.png",
+  file_path = "objective3/descriptive_analysis/group_c/images/reading_box_plot.png",
   outlier_color = "red",
   width = 4,
   height = 6  
