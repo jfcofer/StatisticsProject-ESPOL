@@ -77,10 +77,11 @@ make_box_plot <- function(data, column, fill_color = "blue",
   ggsave(file_path, plot = box_plot, width = width, height = height)
 }
 
+data <- read.csv("StudentsPerformance.csv")
 
 muestra_standard_lunch <- data %>%
   select(lunch, promedio) %>%
-  filter(lunch == "free/reduced")
+  filter(!lunch == "free/reduced")
 
 
 standard_lunch_stats <- calculate_statistics(muestra_standard_lunch$promedio)
@@ -97,7 +98,7 @@ make_histogram_plot(
   binwidth = 5,
   fill_color = "blue",
   border_color = "black",
-  title = "Histogram of Promedio",
+  title = "",
   x_label = "Promedio",
   file_path = "objective2/descriptive_analysis/standard_lunch/images/standard_lunch_hist_plot.png"
 )
@@ -107,7 +108,7 @@ make_box_plot(
   column = "promedio",
   fill_color = "blue",
   border_color = "black",
-  title = "Boxplot of Promedios",
+  title = "",
   y_label = "Promedio",
   file_path = "objective2/descriptive_analysis/standard_lunch/images/standard_lunch_box_plot.png",
   outlier_color = "red",

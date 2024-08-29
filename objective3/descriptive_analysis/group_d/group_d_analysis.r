@@ -111,7 +111,7 @@ make_histogram_plot(
   binwidth = 5,
   fill_color = "blue",
   border_color = "black",
-  title = "Histogram of Math Score",
+  title = "",
   x_label = "Math Score",
   file_path = "objective3/descriptive_analysis/group_d/images/math_hist_plot.png"
 )
@@ -122,7 +122,7 @@ make_histogram_plot(
   binwidth = 5,
   fill_color = "blue",
   border_color = "black",
-  title = "Histogram of Writing Score",
+  title = "",
   x_label = "Writing Score",
   file_path = "objective3/descriptive_analysis/group_d/images/writing_hist_plot.png"
 )
@@ -133,7 +133,7 @@ make_histogram_plot(
   binwidth = 5,
   fill_color = "blue",
   border_color = "black",
-  title = "Histogram of Reading Score",
+  title = "",
   x_label = "Reading Score",
   file_path = "objective3/descriptive_analysis/group_d/images/reading_hist_plot.png"
 )
@@ -144,7 +144,7 @@ make_box_plot(
   score_column = "math_score",
   fill_color = "blue",
   border_color = "black",
-  title = "Boxplot of Math Scores",
+  title = "",
   y_label = "Math Score",
   file_path = "objective3/descriptive_analysis/group_d/images/math_box_plot.png",
   outlier_color = "red",
@@ -156,7 +156,7 @@ make_box_plot(
   score_column = "writing_score",
   fill_color = "blue",
   border_color = "black",
-  title = "Boxplot of Writing Scores",
+  title = "",
   y_label = "Writing Score",
   file_path = "objective3/descriptive_analysis/group_d/images/writing_box_plot.png",
   outlier_color = "red",
@@ -168,7 +168,7 @@ make_box_plot(
   score_column = "reading_score",
   fill_color = "blue",
   border_color = "black",
-  title = "Boxplot of Reading Scores",
+  title = "",
   y_label = "Reading Score",
   file_path = "objective3/descriptive_analysis/group_d/images/reading_box_plot.png",
   outlier_color = "red",
